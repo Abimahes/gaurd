@@ -16,6 +16,7 @@ export class DashboardComponent {
   ngOnInit(){
     this.post.getuser().subscribe((res)=>{
       this.data=res;
+      
     })
   }
   onDel(x:number){
