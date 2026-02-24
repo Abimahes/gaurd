@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "username": "abi",
+      "password": "123",
+      "reenterpassword": "123",
+      "phoneNo": 567567567,
+      "email": "abimahes@cityunionbank",
+      "id": 1
+    },
+    {
+      "username": "ilak",
+      "password": "123",
+      "reenterpassword": "124",
+      "phoneNo": 345674567,
+      "email": "wertyqwrthjk",
+      "id": 2
+    },
+    {
+      "username": "hello",
+      "password": "hello",
+      "reenterpassword": "hello",
+      "phoneNo": 12345667,
+      "email": "abiabiabi",
+      "id": 3
+    }
+  ]
+}

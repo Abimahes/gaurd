@@ -1,0 +1,13 @@
+<p>employees works!</p>
+<table>
+    <tr>
+        <th>Username:</th>
+        <th>PhoneNo:</th>
+        <th>Email:</th>
+    </tr>
+    <tr *ngIf="user">
+        <td>{{user.username}}</td>
+        <td>{{user.phoneNo}}</td>
+        <td>{{user.email}}</td>
+    </tr>
+</table>

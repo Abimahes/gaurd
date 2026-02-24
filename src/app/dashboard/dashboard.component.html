@@ -1,0 +1,21 @@
+<table class="user-table">
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Phone No</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let x of data; let i = index">
+    <td>{{ x.username }}</td>
+    <td>{{ x.email }}</td>
+    <td>{{ x.phoneNo }}</td>
+    <td>
+      <button class="delete-btn" (click)="onDel(x.id)">Delete</button>
+      <button class="delete-btn" (click)="ondetail(x.id)" routerLink="employees">Details</button>
+    </td>
+  </tr>
+</table>
+<button (click)="onLogout()" class="out-btn">Logout</button><br>
+
+<app-employees [user]="iddetails"></app-employees>
