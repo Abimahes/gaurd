@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PostofficeService } from '../postoffice.service';
-import { Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -16,7 +16,6 @@ export class DashboardComponent {
   ngOnInit(){
     this.post.getuser().subscribe((res)=>{
       this.data=res;
-      
     })
   }
   onDel(x:number){
@@ -37,5 +36,18 @@ export class DashboardComponent {
     })  
 
   }
-
+ngOnDestroy(){
+  if(confirm('Are you sure you want to leave this page?')){
+    localStorage.removeItem('token');
+  }
+  else{
+    //hi
+    // this.route.navigate(['dashboard']);
+  }
 }
+}
+
+
+
+
+
