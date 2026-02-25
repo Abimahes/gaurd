@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PostofficeService } from '../postoffice.service';
-import {  Router } from '@angular/router';
+import {  ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -12,7 +12,14 @@ export class DashboardComponent {
   details!:any
   data!:any;
   iddetails!:any
-  constructor(private post:PostofficeService , private route:Router,private http:HttpClient){}
+  constructor(private post:PostofficeService , private route:Router,private http:HttpClient , private activedroute:ActivatedRoute){
+    this.activedroute.queryParams.subscribe((res)=>{
+      console.log(res);
+      this.details=res
+
+      
+  }) 
+  }
   ngOnInit(){
     this.post.getuser().subscribe((res)=>{
       this.data=res;
@@ -36,15 +43,9 @@ export class DashboardComponent {
     })  
 
   }
-ngOnDestroy(){
-  if(confirm('Are you sure you want to leave this page?')){
-    localStorage.removeItem('token');
-  }
-  else{
-    //hi
-    // this.route.navigate(['dashboard']);
-  }
-}
+
+          
+
 }
 
 
