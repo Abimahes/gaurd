@@ -11,7 +11,7 @@ import { canLoadEx } from './canloadex';
 const routes: Routes = [{path:'',component:LoginComponent, },
    {path:"home",loadChildren:()=>import('../app/home/home.module').then(m=>m.HomeModule), canLoad:[canLoadEx]},
   {path:'signup/:id', component:SignupComponent,},
-  {path:'dashboard',component:DashboardComponent, canActivate:[loginGuard] ,children:[{path:'employees',component:EmployeesComponent}]},
+  {path:'dashboard',component:DashboardComponent, canActivate:[loginGuard] , canDeactivate:[example2Guard],children:[{path:'employees',component:EmployeesComponent}]},
   {path:'**',component:LoginComponent}
   
 ];
