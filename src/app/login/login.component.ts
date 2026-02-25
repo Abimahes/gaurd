@@ -20,10 +20,11 @@ password: string='';
       let found = false;
       data.forEach((x:any) => {
         if(x.username===this.name && x.password===this.password){
-          this.route.navigate(['dashboard']);
+          this.route.navigate(['dashboard'], {queryParams:{name:this.name}})
           found = true;
         }
       });
+
       if(!found){
         alert('invalid credentials');
       }
@@ -31,10 +32,10 @@ password: string='';
     localStorage.setItem('token','true');
   }
 
-  id = 4;
+
 
 
   onSignup(){
-    this.route.navigate([`signup/${this.id}`],{queryParams:{name:this.name}})
+    this.route.navigate(['signup'],{queryParams:{name:this.name}})
   }
 }
