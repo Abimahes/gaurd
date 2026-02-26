@@ -36,6 +36,6 @@ password: string='';
 
 
   onSignup(){
-    this.route.navigate(['signup'],{queryParams:{name:this.name}})
+    this.route.navigate(['signup'])
   }
 }
